@@ -229,7 +229,7 @@ export default function Contact() {
                       href="https://www.instagram.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--primary)] hover:text-[var(--primary-700)] underline"
+                      className="text-gray-600 hover:text-[var(--primary-700)] underline"
                     >
                       instagram.com
                     </a>
@@ -255,9 +255,9 @@ export default function Contact() {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       Telefon
                     </h3>
-                    <p className="text-gray-600">+90 (555) 123 45 67</p>
+                    <p className="text-gray-600">+90 (507) 476 03 09</p>
                     <p className="text-sm text-gray-500">
-                      Pazartesi - Cuma: 09:00 - 18:00
+                      Pazartesi - Cuma: 09:00 - 20:00
                     </p>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+              {/* <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                 <div className="flex items-center">
                   <svg
                     className="w-5 h-5 text-yellow-600 mr-2"
@@ -366,7 +366,7 @@ export default function Contact() {
                     Acil durumlarda 7/24 ulaşabilirsiniz
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Map */}
@@ -419,11 +419,12 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Online terapi mümkün mü?
+                Neden online terapi?
               </h3>
               <p className="text-gray-600">
-                Evet, güvenli video konferans platformları üzerinden online
-                terapi seansları düzenleyebiliriz.
+                Online terapi, esneklik ve erişilebilirlik sağlar. Kendi
+                evinizin konforunda, zamandan tasarruf ederek ve seyahat etme
+                zorunluluğu olmadan profesyonel destek alabilirsiniz.
               </p>
             </div>
             <div>

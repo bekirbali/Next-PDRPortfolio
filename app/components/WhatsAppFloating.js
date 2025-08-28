@@ -17,8 +17,7 @@ export default function WhatsAppFloating({
   useEffect(() => {
     const intervalId = setInterval(() => {
       setShowPing(true);
-      const timeoutId = setTimeout(() => setShowPing(false), 1200);
-      return () => clearTimeout(timeoutId);
+      setTimeout(() => setShowPing(false), 2000);
     }, 5000);
 
     return () => clearInterval(intervalId);

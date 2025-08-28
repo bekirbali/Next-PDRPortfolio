@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppFloating
-          phone="+905555555555"
+          phone="+905074760309"
           message="Merhaba, web sitenizden yazıyorum."
         />
       </body>

@@ -60,7 +60,7 @@ export default function About() {
           </div>
 
           {/* Sağ taraf - Metin */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start justify-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Size Nasıl Yardımcı Olabilirim?
             </h2>

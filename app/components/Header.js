@@ -29,7 +29,7 @@ export default function Header() {
               className="flex flex-col items-center gap-1 border-r border-gray-600"
             >
               <Image
-                src="/assets/mervekisalogo.png"
+                src="/assets/maviinflatelogo.png"
                 alt="Merve KISA Logo"
                 width={100}
                 height={40}
@@ -40,8 +40,8 @@ export default function Header() {
               </span>
             </Link>
             <div className="flex flex-col gap-1">
-              <p>Psikoterapist</p>
-              <p>Psikolojik Danışman</p>
+              <p className="text-[#34495e] font-medium">Psikoterapist</p>
+              <p className="text-[#34495e] font-medium">Psikolojik Danışman</p>
             </div>
           </div>
 

@@ -7,6 +7,44 @@ export const metadata = {
 export default function Therapies() {
   const therapies = [
     {
+      title: "Online Terapi",
+      description:
+        "Ev konforunuzda, güvenli ve etkili online terapi seansları ile profesyonel destek alın.",
+      duration: "50 dakika",
+      frequency: "Haftada 1 seans",
+      price: "400 TL",
+      features: [
+        "Video konferans üzerinden seanslar",
+        "Güvenli platform",
+        "Esnek randevu saatleri",
+        "Ev konforunda terapi",
+        "Dijital materyal paylaşımı",
+        "7/24 destek sistemi",
+      ],
+      process: [
+        "Online platform kurulumu",
+        "İlk değerlendirme seansı",
+        "Düzenli online seanslar",
+        "Dijital ev ödevleri",
+        "İlerleme takibi ve raporlama",
+      ],
+      icon: (
+        <svg
+          className="w-12 h-12"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+          />
+        </svg>
+      ),
+    },
+    {
       title: "Bireysel Terapi",
       description:
         "Kişisel sorunlarınızı çözmek ve yaşam kalitenizi artırmak için birebir destek.",
@@ -14,10 +52,10 @@ export default function Therapies() {
       frequency: "Haftada 1-2 seans",
       price: "400 TL",
       features: [
+        "Yüz yüze terapi",
         "Kaygı ve depresyon tedavisi",
         "Stres yönetimi",
         "Benlik saygısı geliştirme",
-        "Kişisel gelişim",
         "Travma tedavisi",
         "Öfke kontrolü",
       ],
@@ -40,44 +78,6 @@ export default function Therapies() {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Çift Terapisi",
-      description:
-        "İlişkinizi güçlendirmek ve iletişim sorunlarını çözmek için çiftlere özel destek.",
-      duration: "60 dakika",
-      frequency: "Haftada 1 seans",
-      price: "600 TL",
-      features: [
-        "İletişim becerileri geliştirme",
-        "Çatışma çözüm teknikleri",
-        "Güven inşası",
-        "Intimacy sorunları",
-        "Boşanma danışmanlığı",
-        "Evlilik öncesi hazırlık",
-      ],
-      process: [
-        "Çift olarak değerlendirme",
-        "İlişki dinamiklerini anlama",
-        "İletişim becerileri eğitimi",
-        "Ev ödevleri ve uygulamalar",
-        "İlerleme takibi",
-      ],
-      icon: (
-        <svg
-          className="w-12 h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
           />
         </svg>
       ),
@@ -192,7 +192,7 @@ export default function Therapies() {
                       <h2 className="text-2xl font-bold text-gray-900">
                         {therapy.title}
                       </h2>
-                      <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
+                      {/* <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
                         <span>{therapy.duration}</span>
                         <span>•</span>
                         <span>{therapy.frequency}</span>
@@ -200,7 +200,7 @@ export default function Therapies() {
                         <span className="font-semibold text-[var(--primary-700)]">
                           {therapy.price}
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
@@ -318,11 +318,12 @@ export default function Therapies() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Online terapi mümkün mü?
+                Neden online terapi?
               </h3>
               <p className="text-gray-600">
-                Evet, güvenli video konferans platformları üzerinden online
-                terapi seansları da düzenleyebiliriz.
+                Online terapi, esneklik ve erişilebilirlik sağlar. Kendi
+                evinizin konforunda, zamandan tasarruf ederek ve seyahat etme
+                zorunluluğu olmadan profesyonel destek alabilirsiniz.
               </p>
             </div>
           </div>

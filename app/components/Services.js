@@ -3,6 +3,32 @@ import Link from "next/link";
 export default function Services() {
   const services = [
     {
+      title: "Online Terapi",
+      description:
+        "Ev konforunuzda, güvenli ve etkili online terapi seansları ile profesyonel destek.",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+          />
+        </svg>
+      ),
+      features: [
+        "Video konferans seansları",
+        "Güvenli platform",
+        "Esnek randevu saatleri",
+        "Ev konforunda terapi",
+      ],
+    },
+    {
       title: "Bireysel Terapi",
       description:
         "Kişisel gelişim, kaygı, depresyon ve yaşam sorunları için birebir destek.",
@@ -22,36 +48,10 @@ export default function Services() {
         </svg>
       ),
       features: [
-        "Kişisel gelişim",
+        "Yüz yüze terapi",
         "Kaygı yönetimi",
         "Stres azaltma",
         "Öz güven artırma",
-      ],
-    },
-    {
-      title: "Çift Terapisi",
-      description:
-        "İlişki sorunları, iletişim problemleri ve çift uyumu için profesyonel destek.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
-      ),
-      features: [
-        "İletişim geliştirme",
-        "Çatışma çözümü",
-        "Güven inşası",
-        "İlişki dinamikleri",
       ],
     },
     {
