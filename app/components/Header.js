@@ -40,7 +40,7 @@ export default function Header() {
               </span>
             </Link>
             <div className="flex flex-col gap-1">
-              <p>Psikoterapist &</p>
+              <p>Psikoterapist</p>
               <p>Psikolojik Danışman</p>
             </div>
           </div>
