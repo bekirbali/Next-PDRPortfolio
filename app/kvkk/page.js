@@ -22,18 +22,18 @@ export default function KVKK() {
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
             1. Veri Sorumlusu
           </h2>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <p className="text-blue-800 mb-2">
+          <div className="bg-[var(--primary-50)] border border-[var(--primary-200)] rounded-lg p-4 mb-6">
+            <p className="text-[var(--primary-700)] mb-2">
               <strong>Veri Sorumlusu:</strong> PDR Uzmanı [Ad Soyad]
             </p>
-            <p className="text-blue-800 mb-2">
+            <p className="text-[var(--primary-700)] mb-2">
               <strong>Adres:</strong> Merkez Mahallesi Örnek Sokak No:123
               Çankaya/Ankara
             </p>
-            <p className="text-blue-800 mb-2">
+            <p className="text-[var(--primary-700)] mb-2">
               <strong>E-posta:</strong> info@pdruzmani.com
             </p>
-            <p className="text-blue-800">
+            <p className="text-[var(--primary-700)]">
               <strong>Telefon:</strong> +90 (555) 123 45 67
             </p>
           </div>
@@ -175,9 +175,11 @@ export default function KVKK() {
             KVKK&apos;nın 11. maddesi uyarınca sahip olduğunuz haklar:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-800 mb-2">Temel Haklar</h4>
-              <ul className="text-sm text-blue-700 space-y-1">
+            <div className="bg-[var(--primary-50)] p-4 rounded-lg">
+              <h4 className="font-semibold text-[var(--primary-700)] mb-2">
+                Temel Haklar
+              </h4>
+              <ul className="text-sm text-[var(--primary-700)] space-y-1">
                 <li>• Kişisel veri işlenip işlenmediğini öğrenme</li>
                 <li>• İşlenme amacını öğrenme</li>
                 <li>• Yurt içi/yurt dışı aktarımları öğrenme</li>
@@ -277,7 +279,7 @@ export default function KVKK() {
             </p>
           </div>
 
-          <div className="bg-gray-100 border-l-4 border-blue-500 p-4 mt-8">
+          <div className="bg-gray-100 border-l-4 border-[var(--primary-700)] p-4 mt-8">
             <p className="text-sm text-gray-700">
               <strong>Yürürlük Tarihi:</strong> 15 Mart 2024
               <br />

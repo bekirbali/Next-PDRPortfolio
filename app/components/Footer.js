@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link
               href="/"
-              className="text-2xl font-bold text-blue-800 mb-4 block"
+              className="text-2xl font-bold text-[var(--primary-700)] mb-4 block"
             >
               PDR Uzmanı
             </Link>
@@ -19,8 +20,10 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[var(--primary)] transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -32,17 +35,13 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
-                className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[var(--primary)] transition-colors duration-200"
                 aria-label="Instagram"
               >
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.987 11.988 11.987 6.618 0 11.987-5.369 11.987-11.987C24.014 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718 0c-1.297 0-2.448-.49-3.323-1.297-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297z" />
-                </svg>
+                <FaInstagram className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -54,7 +53,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/hakkimda"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-200"
                 >
                   Hakkımda
                 </Link>
@@ -62,7 +61,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terapiler"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-200"
                 >
                   Terapiler
                 </Link>
@@ -70,7 +69,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/egitimler"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-200"
                 >
                   Eğitimler
                 </Link>
@@ -78,7 +77,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/yazilar"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-200"
                 >
                   Yazılar
                 </Link>
@@ -119,13 +118,13 @@ export default function Footer() {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
                 href="/gizlilik"
-                className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200"
+                className="text-gray-500 hover:text-[var(--primary)] text-sm transition-colors duration-200"
               >
                 Gizlilik Politikası
               </Link>
               <Link
                 href="/kvkk"
-                className="text-gray-500 hover:text-blue-600 text-sm transition-colors duration-200"
+                className="text-gray-500 hover:text-[var(--primary)] text-sm transition-colors duration-200"
               >
                 KVKK
               </Link>
@@ -136,4 +135,3 @@ export default function Footer() {
     </footer>
   );
 }
-

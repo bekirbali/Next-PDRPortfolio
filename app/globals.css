@@ -3,8 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #1f2937;
-  --primary-blue: #1e40af;
-  --primary-blue-light: #3b82f6;
+  /* Primary pastel orange theme */
+  --primary: #ffc067; /* main */
+  --primary-600: #ffb24a; /* hover on white */
+  --primary-700: #ff9e21; /* stronger hover */
+  --primary-50: #fff4e6; /* light bg tint */
+  --primary-100: #ffe8cc; /* light */
+  --primary-200: #ffd8a8; /* lighter */
   --secondary-green: #059669;
   --accent-teal: #0d9488;
 }
@@ -28,9 +33,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
-*:focus {
-  outline: 2px solid var(--primary-blue-light);
+/* Focus styles for accessibility (only on keyboard focus) */
+*:focus-visible {
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -44,10 +49,31 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--primary-200);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--primary-600);
+}
+
+/* WhatsApp button short bounce to pair with ping */
+@keyframes whatsapp-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-5%);
+  }
+}
+
+.whatsapp-bounce {
+  animation: whatsapp-bounce 600ms ease-out;
 }

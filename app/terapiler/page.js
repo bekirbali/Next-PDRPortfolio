@@ -153,7 +153,7 @@ export default function Therapies() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
           />
         </svg>
       ),
@@ -185,7 +185,7 @@ export default function Therapies() {
                 {/* Left Side - Info */}
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center text-white mr-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#ffb650] to-teal-300 rounded-xl flex items-center justify-center text-white mr-4">
                       {therapy.icon}
                     </div>
                     <div>
@@ -197,7 +197,7 @@ export default function Therapies() {
                         <span>•</span>
                         <span>{therapy.frequency}</span>
                         <span>•</span>
-                        <span className="font-semibold text-blue-600">
+                        <span className="font-semibold text-[var(--primary-700)]">
                           {therapy.price}
                         </span>
                       </div>
@@ -231,7 +231,7 @@ export default function Therapies() {
                               d="M5 13l4 4L19 7"
                             />
                           </svg>
-                          <span className="text-sm">{feature}</span>
+                          <span>{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -239,14 +239,14 @@ export default function Therapies() {
                 </div>
 
                 {/* Right Side - Process */}
-                <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 lg:p-12">
+                <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 p-8 lg:p-12">
                   <h3 className="text-xl font-semibold text-gray-900 mb-6">
                     Süreç Nasıl İşler?
                   </h3>
                   <div className="space-y-4">
                     {therapy.process.map((step, stepIndex) => (
                       <div key={stepIndex} className="flex items-start">
-                        <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3">
+                        <div className="flex-shrink-0 w-8 h-8 bg-[var(--primary)] text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3">
                           {stepIndex + 1}
                         </div>
                         <p className="text-gray-700">{step}</p>
@@ -257,7 +257,7 @@ export default function Therapies() {
                   <div className="mt-8">
                     <a
                       href="/iletisim"
-                      className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold"
+                      className="inline-flex items-center bg-[var(--primary)] text-white px-6 py-3 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold"
                     >
                       Randevu Al
                       <svg
@@ -360,4 +360,3 @@ export default function Therapies() {
     </div>
   );
 }
-

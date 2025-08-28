@@ -138,7 +138,7 @@ export default function Education() {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                          <span className="bg-[var(--primary-100)] text-[var(--primary-700)] text-sm font-medium px-3 py-1 rounded-full">
                             {education.type}
                           </span>
                           <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
@@ -156,17 +156,17 @@ export default function Education() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-lg text-gray-900 mb-3">
                           Eğitim Konuları:
                         </h4>
                         <ul className="space-y-1">
                           {education.topics.map((topic, topicIndex) => (
                             <li
                               key={topicIndex}
-                              className="flex items-start text-sm text-gray-600"
+                              className="flex items-start text-base text-gray-600"
                             >
                               <svg
-                                className="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                                className="w-4 h-4 text-[var(--primary-700)] mr-2 mt-0.5 flex-shrink-0"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -184,7 +184,7 @@ export default function Education() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-3">
+                        <h4 className="font-semibold text-lg text-gray-900 mb-3">
                           Hedef Kitle:
                         </h4>
                         <ul className="space-y-1">
@@ -192,7 +192,7 @@ export default function Education() {
                             (audience, audienceIndex) => (
                               <li
                                 key={audienceIndex}
-                                className="flex items-center text-sm text-gray-600"
+                                className="flex items-center text-base text-gray-600"
                               >
                                 <svg
                                   className="w-4 h-4 text-teal-500 mr-2 flex-shrink-0"
@@ -217,11 +217,11 @@ export default function Education() {
                   </div>
 
                   {/* Right - Details & Registration */}
-                  <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8">
+                  <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 p-8">
                     <div className="space-y-4 mb-6">
                       <div className="flex items-center text-gray-700">
                         <svg
-                          className="w-5 h-5 text-blue-600 mr-3"
+                          className="w-5 h-5 text-[var(--primary-700)] mr-3"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -237,7 +237,7 @@ export default function Education() {
                       </div>
                       <div className="flex items-center text-gray-700">
                         <svg
-                          className="w-5 h-5 text-blue-600 mr-3"
+                          className="w-5 h-5 text-[var(--primary-700)] mr-3"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -253,7 +253,7 @@ export default function Education() {
                       </div>
                       <div className="flex items-center text-gray-700">
                         <svg
-                          className="w-5 h-5 text-blue-600 mr-3"
+                          className="w-5 h-5 text-[var(--primary-700)] mr-3"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -269,7 +269,7 @@ export default function Education() {
                       </div>
                       <div className="flex items-center text-gray-700">
                         <svg
-                          className="w-5 h-5 text-blue-600 mr-3"
+                          className="w-5 h-5 text-[var(--primary-700)] mr-3"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -287,21 +287,18 @@ export default function Education() {
 
                     <div className="border-t border-gray-200 pt-6">
                       <div className="text-center mb-6">
-                        <span className="text-3xl font-bold text-blue-600">
+                        <span className="text-3xl font-bold text-[var(--primary-700)]">
                           {education.price}
                         </span>
-                        <p className="text-gray-600 text-sm">
-                          Erken kayıt indirimi
-                        </p>
                       </div>
 
-                      <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold mb-3">
+                      <button className="w-full bg-[var(--primary)] text-white py-3 px-6 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold mb-3">
                         Kayıt Ol
                       </button>
 
                       <a
                         href="/iletisim"
-                        className="block text-center text-blue-600 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+                        className="block text-center text-[var(--primary-700)] hover:text-[var(--primary)] transition-colors duration-200 text-sm font-medium"
                       >
                         Detaylı Bilgi Al
                       </a>
@@ -346,13 +343,13 @@ export default function Education() {
         </div>
 
         {/* Education Benefits */}
-        <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8 mb-20">
+        <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 rounded-2xl p-8 mb-20">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Eğitimlerimizin Avantajları
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -458,9 +455,9 @@ export default function Education() {
             <input
               type="email"
               placeholder="E-posta adresiniz"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
             />
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold">
+            <button className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold">
               Abone Ol
             </button>
           </div>
@@ -469,4 +466,3 @@ export default function Education() {
     </div>
   );
 }
-

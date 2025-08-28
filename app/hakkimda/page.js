@@ -22,8 +22,8 @@ export default function About() {
         {/* Profile Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <div className="bg-gradient-to-br from-blue-100 to-teal-100 rounded-2xl p-8 text-center">
-              <div className="w-32 h-32 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-[var(--primary-100)] to-teal-100 rounded-2xl p-8 text-center">
+              <div className="w-32 h-32 bg-[var(--primary)] rounded-full mx-auto mb-6 flex items-center justify-center">
                 <svg
                   className="w-16 h-16 text-white"
                   fill="none"
@@ -39,9 +39,11 @@ export default function About() {
                 </svg>
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Dr. Adı Soyadı
+                Merve BİLGİ KISA
               </h2>
-              <p className="text-gray-600 font-medium">PDR Uzmanı</p>
+              <p className="text-gray-600 font-medium">
+                Psikoterapist & Psikolojik Danışman
+              </p>
             </div>
           </div>
 
@@ -73,7 +75,7 @@ export default function About() {
               Eğitim
             </h3>
             <div className="space-y-6">
-              <div className="border-l-4 border-blue-600 pl-6">
+              <div className="border-l-4 border-[var(--primary)] pl-6">
                 <h4 className="text-lg font-semibold text-gray-900">
                   Yüksek Lisans
                 </h4>
@@ -142,13 +144,13 @@ export default function About() {
         </div>
 
         {/* Philosophy */}
-        <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-[var(--primary-50)] to-teal-50 rounded-2xl p-8 mb-16">
           <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
             Çalışma Felsefem
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -166,7 +168,7 @@ export default function About() {
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 Empatik Yaklaşım
               </h4>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600">
                 Her danışanın benzersiz deneyimlerini anlayarak, empati kurmaya
                 odaklanırım.
               </p>
@@ -190,7 +192,7 @@ export default function About() {
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 Çözüm Odaklı
               </h4>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600">
                 Probleme odaklanmak yerine, çözüm yolları geliştirmeye öncelik
                 veririm.
               </p>
@@ -214,7 +216,7 @@ export default function About() {
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 Bilimsel Temelli
               </h4>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600">
                 Kanıta dayalı terapi yöntemlerini kullanarak etkili sonuçlar
                 elde ederim.
               </p>
@@ -232,7 +234,7 @@ export default function About() {
           </p>
           <a
             href="/iletisim"
-            className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
+            className="inline-flex items-center bg-[var(--primary)] text-white px-8 py-4 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
           >
             İletişime Geç
             <svg
@@ -254,4 +256,3 @@ export default function About() {
     </div>
   );
 }
-

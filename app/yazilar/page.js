@@ -106,7 +106,7 @@ export default function Blog() {
                 <input
                   type="text"
                   placeholder="Makale ara..."
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                 />
                 <svg
                   className="absolute left-3 top-3.5 h-5 w-5 text-gray-400"
@@ -131,7 +131,7 @@ export default function Blog() {
                   key={index}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                     index === 0
-                      ? "bg-blue-600 text-white"
+                      ? "bg-[var(--primary)] text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
@@ -144,7 +144,7 @@ export default function Blog() {
 
         {/* Featured Post */}
         <div className="mb-16">
-          <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl overflow-hidden">
+          <div className="bg-gradient-to-r from-[var(--primary)] to-teal-600 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-8 lg:p-12 text-white">
                 <span className="inline-block bg-white bg-opacity-20 text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
@@ -153,21 +153,21 @@ export default function Blog() {
                 <h2 className="text-3xl lg:text-4xl font-bold mb-4">
                   {featuredPost.title}
                 </h2>
-                <p className="text-blue-100 mb-6 text-lg">
+                <p className="text-[var(--primary-100)] mb-6 text-lg">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center space-x-4 text-blue-100 text-sm mb-6">
+                <div className="flex items-center space-x-4 text-[var(--primary-100)] text-sm mb-6">
                   <span>{featuredPost.date}</span>
                   <span>•</span>
                   <span>{featuredPost.readTime} okuma</span>
                   <span>•</span>
                   <span>{featuredPost.category}</span>
                 </div>
-                <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200">
+                <button className="bg-white text-[var(--primary-700)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200">
                   Makaleyi Oku
                 </button>
               </div>
-              <div className="bg-gradient-to-br from-blue-400 to-teal-400 flex items-center justify-center p-8">
+              <div className="bg-gradient-to-br from-[#ffcf88] to-teal-400 flex items-center justify-center p-8">
                 <div className="text-center text-white">
                   <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg
@@ -198,9 +198,9 @@ export default function Blog() {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-[var(--primary-100)] to-teal-100 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-2">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -215,13 +215,13 @@ export default function Blog() {
                       />
                     </svg>
                   </div>
-                  <span className="text-blue-600 font-medium text-sm">
+                  <span className="text-[var(--primary-700)] font-medium text-sm">
                     {post.category}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
                   {post.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
@@ -239,7 +239,7 @@ export default function Blog() {
                     </span>
                   ))}
                 </div>
-                <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 flex items-center">
+                <button className="text-[var(--primary-700)] font-medium hover:text-[var(--primary)] transition-colors duration-200 flex items-center">
                   Devamını Oku
                   <svg
                     className="w-4 h-4 ml-1"
@@ -295,4 +295,3 @@ export default function Blog() {
     </div>
   );
 }
-

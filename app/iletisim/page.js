@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -74,7 +75,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                     />
                   </div>
                   <div>
@@ -91,7 +92,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                     />
                   </div>
                 </div>
@@ -110,7 +111,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                     />
                   </div>
                   <div>
@@ -125,7 +126,7 @@ export default function Contact() {
                       name="appointmentType"
                       value={formData.appointmentType}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                     >
                       <option value="">Seçiniz</option>
                       {appointmentTypes.map((type, index) => (
@@ -150,7 +151,7 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                   />
                 </div>
 
@@ -168,15 +169,15 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                     placeholder="Lütfen durumunuz hakkında kısaca bilgi verin..."
                   ></textarea>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="bg-[var(--primary-50)] border border-[var(--primary-200)] rounded-lg p-4">
                   <div className="flex items-start">
                     <svg
-                      className="w-5 h-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0"
+                      className="w-5 h-5 text-[var(--primary-700)] mt-0.5 mr-3 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -188,7 +189,7 @@ export default function Contact() {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <div className="text-sm text-blue-800">
+                    <div className="text-sm text-[var(--primary-700)]">
                       <p className="font-medium mb-1">Gizlilik Bildirimi</p>
                       <p>
                         Paylaştığınız tüm bilgiler gizli tutulur ve sadece
@@ -200,7 +201,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
+                  className="w-full bg-[var(--primary)] text-white py-3 px-6 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold"
                 >
                   Mesaj Gönder
                 </button>
@@ -211,13 +212,31 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 İletişim Bilgileri
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mr-4">
+                    <FaInstagram className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Instagram
+                    </h3>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--primary)] hover:text-[var(--primary-700)] underline"
+                    >
+                      instagram.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-[var(--primary)] rounded-lg flex items-center justify-center mr-4">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -431,4 +450,3 @@ export default function Contact() {
     </div>
   );
 }
-

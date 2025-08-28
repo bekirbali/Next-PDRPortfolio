@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
     { name: "Anasayfa", href: "/" },
@@ -16,23 +19,43 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b border-blue-100">
+    <header className="bg-white shadow-sm border-b border-[var(--primary-100)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-blue-800">
-              PDR Uzmanı
+          <div className="flex-shrink-0 flex items-center gap-1">
+            <Link
+              href="/"
+              className="flex flex-col items-center gap-1 border-r border-gray-600"
+            >
+              <Image
+                src="/assets/mervekisalogo.png"
+                alt="Merve KISA Logo"
+                width={100}
+                height={40}
+                priority
+              />
+              <span className="text-sm sm:text-base text-center font-semibold text-[var(--primary-700)] tracking-wide">
+                Merve KISA
+              </span>
             </Link>
+            <div className="flex flex-col gap-1">
+              <p>Psikoterapist &</p>
+              <p>Psikolojik Danışman</p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className={`${
+                  pathname === item.href
+                    ? "text-[var(--primary-700)]"
+                    : "text-gray-700 hover:text-[var(--primary)]"
+                } transition-colors duration-200 font-medium`}
               >
                 {item.name}
               </Link>
@@ -43,7 +66,7 @@ export default function Header() {
           <div className="hidden md:flex">
             <Link
               href="/iletisim"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium"
+              className="bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-medium"
             >
               Randevu Al
             </Link>
@@ -53,10 +76,10 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-700 hover:text-[var(--primary)] transition-colors duration-200"
             >
               <svg
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -89,7 +112,11 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2"
+                  className={`${
+                    pathname === item.href
+                      ? "text-[var(--primary-700)]"
+                      : "text-gray-700 hover:text-[var(--primary)]"
+                  } transition-colors duration-200 font-medium px-3 py-2`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -97,7 +124,7 @@ export default function Header() {
               ))}
               <Link
                 href="/iletisim"
-                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium text-center mx-3 mt-4"
+                className="bg-[var(--primary)] text-white px-4 py-2 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-medium text-center mx-3 mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Randevu Al
@@ -109,4 +136,3 @@ export default function Header() {
     </header>
   );
 }
-

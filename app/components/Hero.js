@@ -1,15 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-teal-50 py-20 lg:py-28">
+    <section className="relative bg-gradient-to-br from-[var(--primary-50)] to-teal-50 py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Sol taraf - Metin */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Yaşamınızda
-              <span className="text-blue-600 block">Pozitif Değişim</span>
+              <span className="text-[var(--primary-700)] block">
+                Pozitif Değişim
+              </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl">
               Profesyonel psikolojik destek ile kendinizi keşfedin,
@@ -19,13 +22,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href="/iletisim"
-                className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
+                className="bg-[var(--primary)] text-white px-8 py-4 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold text-lg shadow-lg hover:shadow-xl"
               >
                 Randevu Al
               </Link>
               <Link
                 href="/hakkimda"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 font-semibold text-lg"
+                className="border-2 border-[var(--primary)] text-[var(--primary-700)] px-8 py-4 rounded-full hover:bg-[var(--primary)] hover:text-white transition-colors duration-200 font-semibold text-lg"
               >
                 Hakkımda
               </Link>
@@ -34,10 +37,28 @@ export default function Hero() {
 
           {/* Sağ taraf - Görsel */}
           <div className="relative">
+            <div className="relative bg-white rounded-2xl shadow-2xl p-4 lg:p-6">
+              <div className="aspect-[16/10] overflow-hidden rounded-xl">
+                <Image
+                  src="/assets/heroImage.jpg"
+                  alt="Danışmanlık görüşmesi görseli"
+                  width={800}
+                  height={500}
+                  priority
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/**
+             * Aşağıdaki eski blok istenirse tekrar kullanılmak üzere yorum satırına alındı.
+             * Başlık: "Güvenli Alan"
+             */}
+            {/*
             <div className="relative bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
-              <div className="aspect-square bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-[var(--primary-100)] to-teal-100 rounded-xl flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-20 h-20 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg
                       className="w-10 h-10 text-white"
                       fill="none"
@@ -61,14 +82,14 @@ export default function Hero() {
                 </div>
               </div>
             </div>
+            */}
 
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-200 rounded-full opacity-50"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-200 rounded-full opacity-50"></div>
+            {/* <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-200 rounded-full opacity-50"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[var(--primary-200)] rounded-full opacity-50"></div> */}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
