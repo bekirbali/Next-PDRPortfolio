@@ -14,8 +14,12 @@ export default function Therapies() {
       frequency: "Haftada 1 seans",
       price: "400 TL",
       features: [
+        "Kaygı ve depresyon tedavisi",
+        "Stres yönetimi",
+        "Benlik saygısı geliştirme",
+        "Travma tedavisi",
+        "Öfke kontrolü",
         "Video konferans üzerinden seanslar",
-        "Güvenli platform",
         "Esnek randevu saatleri",
         "Dijital materyal paylaşımı",
       ],

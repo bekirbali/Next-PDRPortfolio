@@ -13,12 +13,12 @@ export default function NeyeIhtiyacinVar() {
     {
       title: "Oyun Terapisi",
       href: "/terapiler",
-      img: "/assets/egitim.jpg",
+      img: "/assets/oyunterapi.jpeg",
     },
     {
       title: "Kukla Terapisi",
       href: "/terapiler",
-      img: "/assets/egitim.jpg",
+      img: "/assets/kuklaterapi1.jpg",
     },
   ];
 
@@ -43,7 +43,7 @@ export default function NeyeIhtiyacinVar() {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="mt-4 text-lg md:text-xl font-medium text-slate-700">
