@@ -1,17 +1,22 @@
 export default function NeyeIhtiyacinVar() {
   const items = [
     {
-      title: "Psikoterapi",
+      title: "Kabul ve Kararlılık (ACT)",
       href: "/terapiler",
       img: "/assets/psychotherapy.jpg",
     },
     {
-      title: "Danışmanlık",
+      title: "EMDR",
       href: "/terapiler",
       img: "/assets/danismanlik.png",
     },
     {
-      title: "Eğitim",
+      title: "Oyun Terapisi",
+      href: "/terapiler",
+      img: "/assets/egitim.jpg",
+    },
+    {
+      title: "Kukla Terapisi",
       href: "/terapiler",
       img: "/assets/egitim.jpg",
     },
@@ -26,7 +31,7 @@ export default function NeyeIhtiyacinVar() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center">
           {items.map((item, idx) => (
             <a
               key={idx}

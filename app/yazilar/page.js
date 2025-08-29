@@ -1,99 +1,196 @@
-export const metadata = {
-  title: "Yazılar - PDR Uzmanı",
-  description:
-    "Psikoloji, mental sağlık ve kişisel gelişim konularında faydalı makaleler ve blog yazıları.",
-};
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { blogAPI, apiUtils } from "../lib/api";
+import { HiClipboardList } from "react-icons/hi";
 
 export default function Blog() {
-  const featuredPost = {
-    title: "Kaygı ile Başa Çıkmanın Etkili Yolları",
-    excerpt:
-      "Günlük yaşamda karşılaştığımız kaygı durumları ile başa çıkmak için kullanabileceğiniz pratik yöntemler ve teknikler.",
-    date: "15 Mart 2024",
-    readTime: "8 dakika",
-    category: "Kaygı Yönetimi",
-    image: "/placeholder-blog.jpg",
+  const [featuredPost, setFeaturedPost] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState(["Tümü"]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("Tümü");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+
+        // Paralel olarak verileri yükle
+        const [featuredData, postsData, categoriesData] = await Promise.all([
+          blogAPI.getFeaturedPosts(),
+          blogAPI.getAllPosts(),
+          blogAPI.getCategories(),
+        ]);
+
+        // Debug: Backend'den gelen verileri konsola yazdır
+        console.log(
+          "Featured Data:",
+          featuredData,
+          "Type:",
+          typeof featuredData,
+          "Array:",
+          Array.isArray(featuredData)
+        );
+        console.log(
+          "Posts Data:",
+          postsData,
+          "Type:",
+          typeof postsData,
+          "Array:",
+          Array.isArray(postsData)
+        );
+        console.log(
+          "Categories Data:",
+          categoriesData,
+          "Type:",
+          typeof categoriesData,
+          "Array:",
+          Array.isArray(categoriesData)
+        );
+
+        // Birden fazla öne çıkarılan makale varsa en yeni tarihli olanı seç
+        let selectedFeaturedPost = null;
+        if (Array.isArray(featuredData) && featuredData.length > 0) {
+          if (featuredData.length === 1) {
+            selectedFeaturedPost = featuredData[0];
+          } else {
+            // Birden fazla öne çıkarılan makale varsa published_at veya created_at'e göre en yenisini seç
+            selectedFeaturedPost = featuredData.reduce((latest, current) => {
+              const latestDate = latest.published_at || latest.created_at;
+              const currentDate = current.published_at || current.created_at;
+              return new Date(currentDate) > new Date(latestDate)
+                ? current
+                : latest;
+            });
+            console.warn(
+              `Birden fazla öne çıkarılan makale bulundu (${featuredData.length} adet). En yeni tarihli olan seçildi:`,
+              selectedFeaturedPost.title
+            );
+          }
+        }
+        setFeaturedPost(selectedFeaturedPost);
+        setPosts(Array.isArray(postsData) ? postsData : []);
+        setFilteredPosts(Array.isArray(postsData) ? postsData : []);
+
+        // Kategorileri "Tümü" ile birlikte ayarla
+        const categoryNames = [
+          "Tümü",
+          ...(Array.isArray(categoriesData)
+            ? categoriesData.map((cat) => cat.name)
+            : []),
+        ];
+        setCategories(categoryNames);
+      } catch (error) {
+        console.error("Error loading blog data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  // Kategori değiştiğinde filtreleme yap
+  useEffect(() => {
+    let filtered = posts;
+
+    // Kategori filtresi
+    if (selectedCategory !== "Tümü") {
+      filtered = filtered.filter(
+        (post) => post.category?.name === selectedCategory
+      );
+    }
+
+    // Arama filtresi
+    if (searchQuery) {
+      filtered = filtered.filter(
+        (post) =>
+          post.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (post.tags_list || []).some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+      );
+    }
+
+    setFilteredPosts(filtered);
+  }, [selectedCategory, searchQuery, posts]);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
   };
 
-  const posts = [
-    {
-      title: "Stres Yönetimi: Günlük Hayatta Uygulayabileceğiniz 10 Teknik",
-      excerpt:
-        "Modern yaşamın getirdiği stresle başa çıkmak için basit ama etkili yöntemler.",
-      date: "12 Mart 2024",
-      readTime: "6 dakika",
-      category: "Stres Yönetimi",
-      tags: ["stres", "rahatlama", "mindfulness"],
-    },
-    {
-      title: "İlişkilerde İletişim: Empati Kurmanın Önemi",
-      excerpt:
-        "Sağlıklı ilişkiler kurmak ve sürdürmek için etkili iletişim becerileri.",
-      date: "8 Mart 2024",
-      readTime: "7 dakika",
-      category: "İlişkiler",
-      tags: ["iletişim", "empati", "ilişkiler"],
-    },
-    {
-      title: "Özgüven Geliştirme: Kendinize İnanmanın Yolları",
-      excerpt:
-        "Düşük özgüvenin üstesinden gelmek ve kendine güvenen bir birey olmak için adımlar.",
-      date: "5 Mart 2024",
-      readTime: "5 dakika",
-      category: "Kişisel Gelişim",
-      tags: ["özgüven", "benlik saygısı", "kişisel gelişim"],
-    },
-    {
-      title: "Depresyon Belirtileri ve Profesyonel Yardım Almanın Önemi",
-      excerpt:
-        "Depresyon belirtilerini tanımak ve ne zaman profesyonel destek alınması gerektiği.",
-      date: "1 Mart 2024",
-      readTime: "9 dakika",
-      category: "Mental Sağlık",
-      tags: ["depresyon", "mental sağlık", "terapi"],
-    },
-    {
-      title: "Mindfulness ve Farkındalık: Anı Yaşamanın Gücü",
-      excerpt:
-        "Mindfulness pratiği ile zihinsel sağlığınızı koruyun ve yaşam kalitenizi artırın.",
-      date: "28 Şubat 2024",
-      readTime: "6 dakika",
-      category: "Mindfulness",
-      tags: ["mindfulness", "meditasyon", "farkındalık"],
-    },
-    {
-      title: "Ergenlik Dönemi: Ailelere Öneriler",
-      excerpt:
-        "Ergenlik dönemindeki çocuklarla iletişim kurma ve onları anlama rehberi.",
-      date: "25 Şubat 2024",
-      readTime: "8 dakika",
-      category: "Aile",
-      tags: ["ergenlik", "aile", "ebeveynlik"],
-    },
-  ];
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
-  const categories = [
-    "Tümü",
-    "Kaygı Yönetimi",
-    "Stres Yönetimi",
-    "İlişkiler",
-    "Kişisel Gelişim",
-    "Mental Sağlık",
-    "Mindfulness",
-    "Aile",
-  ];
+  if (loading) {
+    return (
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)] mx-auto"></div>
+            <p className="mt-4 text-gray-600">Yazılar yükleniyor...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Yazılar ve Makaleler
-          </h1>
+          <div className="flex justify-between items-start mb-6">
+            <div className="flex-1">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Yazılar ve Makaleler
+              </h1>
+            </div>
+            {/* Data Source Toggle */}
+            <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+              <button
+                onClick={() => {
+                  apiUtils.enableMockData();
+                  window.location.reload();
+                }}
+                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                  apiUtils.isUsingMockData()
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                Mock
+              </button>
+              <button
+                onClick={() => {
+                  apiUtils.enableBackendData();
+                  window.location.reload();
+                }}
+                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                  !apiUtils.isUsingMockData()
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                API
+              </button>
+            </div>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Mental sağlık, kişisel gelişim ve yaşam kalitesi konularında faydalı
             bilgiler ve pratik öneriler.
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Şu anda{" "}
+            {apiUtils.isUsingMockData() ? "mock veriler" : "backend API"}{" "}
+            kullanılıyor
           </p>
         </div>
 
@@ -106,6 +203,8 @@ export default function Blog() {
                 <input
                   type="text"
                   placeholder="Makale ara..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)]"
                 />
                 <svg
@@ -129,8 +228,9 @@ export default function Blog() {
               {categories.map((category, index) => (
                 <button
                   key={index}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                    index === 0
+                    category === selectedCategory
                       ? "bg-[var(--primary)] text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
@@ -143,66 +243,167 @@ export default function Blog() {
         </div>
 
         {/* Featured Post */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-[var(--primary)] to-teal-600 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-8 lg:p-12 text-white">
-                <span className="inline-block bg-white bg-opacity-20 text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
-                  Öne Çıkan Makale
-                </span>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                  {featuredPost.title}
-                </h2>
-                <p className="text-[var(--primary-100)] mb-6 text-lg">
-                  {featuredPost.excerpt}
-                </p>
-                <div className="flex items-center space-x-4 text-[var(--primary-100)] text-sm mb-6">
-                  <span>{featuredPost.date}</span>
-                  <span>•</span>
-                  <span>{featuredPost.readTime} okuma</span>
-                  <span>•</span>
-                  <span>{featuredPost.category}</span>
-                </div>
-                <button className="bg-white text-[var(--primary-700)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200">
-                  Makaleyi Oku
-                </button>
-              </div>
-              <div className="bg-gradient-to-br from-[#ffcf88] to-teal-400 flex items-center justify-center p-8">
-                <div className="text-center text-white">
-                  <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-16 h-16"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
-                    </svg>
+        {featuredPost && (
+          <div className="mb-16">
+            <div className="bg-gradient-to-r from-[var(--primary)] to-teal-600 rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="p-8 lg:p-12 text-white">
+                  <span className="inline-block bg-white bg-opacity-20 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
+                    Öne Çıkan Yazı
+                  </span>
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+                    {featuredPost.title}
+                  </h2>
+                  <div
+                    className="text-[var(--primary-100)] mb-6 text-lg rich-text-content line-clamp-4"
+                    dangerouslySetInnerHTML={apiUtils.prepareRichTextContent(
+                      featuredPost.excerpt
+                    )}
+                  />
+                  <div className="flex items-center space-x-4 text-[var(--primary-100)] text-sm mb-6">
+                    <span>
+                      {apiUtils.formatDate(
+                        featuredPost.published_at || featuredPost.created_at
+                      )}
+                    </span>
+                    <span>•</span>
+                    <span>
+                      {apiUtils.formatReadingTime(featuredPost.reading_time)}
+                    </span>
+                    <span>•</span>
+                    <span>{featuredPost.category?.name || "Kategori"}</span>
                   </div>
-                  <h3 className="text-xl font-semibold">Faydalı İçerik</h3>
+                  <Link
+                    href={`/yazilar/${featuredPost.slug}`}
+                    className="bg-white text-[var(--primary-700)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200"
+                  >
+                    Devamını Oku
+                  </Link>
+                </div>
+                <div className="bg-gradient-to-br from-[#ffcf88] to-teal-400 flex items-center justify-center p-8">
+                  <div className="text-center text-white">
+                    <div className="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                      <HiClipboardList className="w-12 h-12 text-teal-600 drop-shadow-md" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-3">
+                      Yazıda Neler Var?
+                    </h3>
+                    {featuredPost.key_points ? (
+                      <div
+                        className="text-left text-base max-w-xs rich-text-content line-clamp-8"
+                        dangerouslySetInnerHTML={apiUtils.prepareRichTextContent(
+                          featuredPost.key_points
+                        )}
+                      />
+                    ) : (
+                      <p className="text-sm opacity-90">
+                        Faydalı bilgiler ve pratik öneriler
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {posts.map((post, index) => (
-            <article
-              key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="h-48 bg-gradient-to-br from-[var(--primary-100)] to-teal-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-2">
+          {filteredPosts.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <div className="text-gray-500 text-lg">
+                {posts.length === 0
+                  ? "Henüz hiç makale bulunmuyor."
+                  : "Arama kriterlerinize uygun makale bulunamadı."}
+              </div>
+              <p className="text-gray-400 mt-2">
+                {posts.length === 0
+                  ? "Backend'den veri yüklenmeye çalışılıyor..."
+                  : "Farklı anahtar kelimeler veya kategoriler deneyebilirsiniz."}
+              </p>
+            </div>
+          ) : (
+            filteredPosts.map((post, index) => (
+              <article
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                {post.featured_image ? (
+                  <div className="h-48 relative overflow-hidden">
+                    <Image
+                      src={post.featured_image}
+                      alt={post.title}
+                      width={400}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-2 left-2">
+                      <span className="bg-black bg-opacity-70 text-white text-xs font-medium px-2 py-1 rounded-full">
+                        {post.category?.name || "Kategori Yok"}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-48 bg-gradient-to-br from-[var(--primary-100)] to-teal-100 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-2">
+                        <svg
+                          className="w-8 h-8 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[var(--primary-700)] font-medium text-sm">
+                        {post.category?.name || "Kategori Yok"}
+                      </span>
+                    </div>
+                  </div>
+                )}
+                <div className="p-6">
+                  <Link href={`/yazilar/${post.slug}`}>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <div
+                    className="text-gray-600 mb-4 rich-text-content line-clamp-4"
+                    dangerouslySetInnerHTML={apiUtils.prepareRichTextContent(
+                      post.excerpt
+                    )}
+                  />
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>
+                      {apiUtils.formatDate(
+                        post.published_at || post.created_at
+                      )}
+                    </span>
+                    <span>{apiUtils.formatReadingTime(post.reading_time)}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {(post.tags_list || []).map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/yazilar/${post.slug}`}
+                    className="text-[var(--primary-700)] font-medium hover:text-[var(--primary)] transition-colors duration-200 flex items-center"
+                  >
+                    Devamını Oku
                     <svg
-                      className="w-8 h-8 text-white"
+                      className="w-4 h-4 ml-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -211,53 +412,14 @@ export default function Blog() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </div>
-                  <span className="text-[var(--primary-700)] font-medium text-sm">
-                    {post.category}
-                  </span>
+                  </Link>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <span>{post.date}</span>
-                  <span>{post.readTime} okuma</span>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <button className="text-[var(--primary-700)] font-medium hover:text-[var(--primary)] transition-colors duration-200 flex items-center">
-                  Devamını Oku
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          )}
         </div>
 
         {/* Newsletter Signup */}
@@ -283,13 +445,6 @@ export default function Blog() {
             Haftalık bülten • Spam göndermiyoruz • İstediğiniz zaman
             çıkabilirsiniz
           </p>
-        </div>
-
-        {/* Load More */}
-        <div className="text-center mt-12">
-          <button className="bg-gray-100 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium">
-            Daha Fazla Makale Yükle
-          </button>
         </div>
       </div>
     </div>

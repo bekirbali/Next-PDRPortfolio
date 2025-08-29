@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppFloating from "./components/WhatsAppFloating";
+// API örneklerini development ortamında kullanabilmek için import ediyoruz
+import "./lib/examples";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

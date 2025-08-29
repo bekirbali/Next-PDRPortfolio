@@ -34,6 +34,7 @@ export default function Header() {
                 width={100}
                 height={40}
                 priority
+                className="w-[100px] h-auto"
               />
               <span className="text-sm sm:text-base text-center font-semibold text-[var(--primary-700)] tracking-wide">
                 Merve KISA

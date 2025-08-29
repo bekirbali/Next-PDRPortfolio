@@ -193,8 +193,8 @@ export default function About() {
                 Çözüm Odaklı
               </h4>
               <p className="text-gray-600">
-                Probleme odaklanmak yerine, çözüm yolları geliştirmeye öncelik
-                veririm.
+                Danışanımla ihtiyaç ve değerlerine uygun çözümler geliştirir,
+                hedeflediği yaşama ulaşmasında profesyonel destek veririm.
               </p>
             </div>
             <div className="text-center">

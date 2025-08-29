@@ -29,9 +29,9 @@ export default function Services() {
       ],
     },
     {
-      title: "Bireysel Terapi",
+      title: "Yüz Yüze Bireysel Terapi",
       description:
-        "Kişisel gelişim, kaygı, depresyon ve yaşam sorunları için birebir destek.",
+        "Yargısız bir şekilde dinlendiğinizi ve anlaşıldığınızı hissedeceğiniz, çıkamadığınız döngülerden kurtulmanıza yardımcı uzman desteği.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -47,12 +47,7 @@ export default function Services() {
           />
         </svg>
       ),
-      features: [
-        "Yüz yüze terapi",
-        "Kaygı yönetimi",
-        "Stres azaltma",
-        "Öz güven artırma",
-      ],
+      features: ["Duygularla temas", "Travma", "Depresyon", "Kaygı yönetimi"],
     },
     {
       title: "Aile Terapisi",
@@ -117,8 +112,8 @@ export default function Services() {
             Sunduğum Hizmetler
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Her bireyin benzersiz ihtiyaçları doğrultusunda kişiselleştirilmiş
-            terapi yaklaşımları ile destek sağlıyorum.
+            Her bireyin benzersiz ihtiyaç ve değerleri doğrultusunda
+            kişiselleştirilmiş terapi yaklaşımları ile destek sağlıyorum.
           </p>
         </div>
 

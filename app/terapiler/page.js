@@ -17,9 +17,7 @@ export default function Therapies() {
         "Video konferans üzerinden seanslar",
         "Güvenli platform",
         "Esnek randevu saatleri",
-        "Ev konforunda terapi",
         "Dijital materyal paylaşımı",
-        "7/24 destek sistemi",
       ],
       process: [
         "Online platform kurulumu",
@@ -123,7 +121,7 @@ export default function Therapies() {
     {
       title: "Grup Terapisi",
       description:
-        "Benzer deneyimler yaşayan kişilerle birlikte grup dinamiği ile iyileşme.",
+        "Benzer deneyimler yaşayan kişilerle bir araya gelerek, yalnız olmadığınızı hissedip grup dinamiği ile iyileşme sürecinizi destekleme.",
       duration: "90 dakika",
       frequency: "Haftada 1 seans",
       price: "200 TL",
