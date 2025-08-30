@@ -1,5 +1,10 @@
 import { API_CONFIG, API_TIMEOUT } from "./config";
-import { mockFeaturedPost, mockBlogPosts, mockCategories } from "./mockData";
+import {
+  mockFeaturedPost,
+  mockBlogPosts,
+  mockCategories,
+  mockEducations,
+} from "./mockData";
 import DOMPurify from "isomorphic-dompurify";
 
 // Backend API fetch fonksiyonları
@@ -33,6 +38,7 @@ const getMockData = {
   blogPosts: () => Promise.resolve(mockBlogPosts),
   featuredPosts: () => Promise.resolve([mockFeaturedPost]),
   categories: () => Promise.resolve(mockCategories),
+  educations: () => Promise.resolve(mockEducations),
   blogPost: (id) => {
     const post =
       id === 1
@@ -80,6 +86,10 @@ const getBackendData = {
       `${API_CONFIG.ENDPOINTS.BLOG_POSTS}?category=${categorySlug}`
     );
     return response.results || response;
+  },
+  educations: async () => {
+    const response = await fetchFromBackend(API_CONFIG.ENDPOINTS.EDUCATIONS);
+    return response.results || response; // DRF pagination format için
   },
 };
 
@@ -276,6 +286,34 @@ export const blogAPI = {
         );
       }
       throw error;
+    }
+  },
+};
+
+// Eğitimler API fonksiyonları
+export const educationAPI = {
+  // Tüm eğitimleri getir
+  async getAllEducations() {
+    try {
+      if (API_CONFIG.USE_MOCK_DATA) {
+        return await getMockData.educations();
+      } else {
+        const data = await getBackendData.educations();
+        // Backend'den gelen verinin array olduğundan emin ol
+        if (!Array.isArray(data)) {
+          console.warn("Educations data is not an array:", data);
+          return [];
+        }
+        return data;
+      }
+    } catch (error) {
+      console.error("Error fetching educations:", error);
+      // Backend'den veri alınamazsa mock data'ya fallback
+      if (!API_CONFIG.USE_MOCK_DATA) {
+        console.warn("Falling back to mock education data");
+        return await getMockData.educations();
+      }
+      return []; // Hata durumunda boş array döndür
     }
   },
 };

@@ -1,7 +1,7 @@
 // API Konfigürasyonu
 export const API_CONFIG = {
   // Mock data kullanılsın mı yoksa backend'den veri çekilsin mi?
-  USE_MOCK_DATA: true, // true: mock data kullan, false: backend'den veri çek
+  USE_MOCK_DATA: false, // true: mock data kullan, false: backend'den veri çek
 
   // Backend API URL'leri
   BASE_URL: "http://localhost:8000/api",
@@ -9,6 +9,7 @@ export const API_CONFIG = {
     BLOG_POSTS: "/blog/posts/",
     CATEGORIES: "/blog/categories/",
     FEATURED_POSTS: "/blog/featured/",
+    EDUCATIONS: "/education/api/educations/",
   },
 };
 

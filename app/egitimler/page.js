@@ -1,10 +1,15 @@
-export const metadata = {
-  title: "Eğitimler - PDR Uzmanı",
-  description:
-    "Profesyoneller için PDR eğitimleri, seminerler ve atölye çalışmaları.",
-};
+"use client";
+import { useState, useEffect } from "react";
+import { educationAPI, apiUtils } from "../lib/api";
+import Image from "next/image";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 export default function Education() {
+  const [educations, setEducations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Sabit veriler - backend'e eklenmeyecek veriler şimdilik static kalıyor
   const upcomingEducations = [
     {
       title: "Kaygı Bozuklukları ve Bilişsel Davranışçı Terapi",
@@ -107,6 +112,26 @@ export default function Education() {
     },
   ];
 
+  useEffect(() => {
+    // Document title'ı ayarla
+    document.title = "Eğitimler - PDR Uzmanı";
+    fetchEducations();
+  }, []);
+
+  const fetchEducations = async () => {
+    try {
+      setLoading(true);
+      const data = await educationAPI.getAllEducations();
+      setEducations(data);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching educations:", err);
+      setError("Eğitim verileri yüklenirken bir hata oluştu.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,8 +146,67 @@ export default function Education() {
           </p>
         </div>
 
+        {/* Backend'den gelen eğitimler */}
+        {educations.length > 0 && (
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Eğitimlerimiz
+            </h2>
+            {loading ? (
+              <div className="text-center py-8">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)] mx-auto"></div>
+                <p className="mt-4 text-gray-600">Eğitimler yükleniyor...</p>
+              </div>
+            ) : error ? (
+              <div className="text-center py-8">
+                <p className="text-red-600">{error}</p>
+                <button
+                  onClick={fetchEducations}
+                  className="mt-4 bg-[var(--primary)] text-white px-6 py-2 rounded-lg hover:bg-[var(--primary-700)] transition-colors"
+                >
+                  Tekrar Dene
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {educations.map((education) => (
+                  <div
+                    key={education.id}
+                    className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full"
+                  >
+                    <div className="relative h-56 flex-shrink-0 bg-gray-50 flex items-center justify-center p-4">
+                      <Image
+                        src={education.image}
+                        alt={education.title}
+                        className="w-full h-full object-contain max-h-full max-w-full"
+                        width={256}
+                        height={256}
+                        onError={(e) => {
+                          e.target.src = "/assets/egitim.jpg"; // Fallback image
+                        }}
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 min-h-[3.5rem] flex items-start">
+                        {education.title}
+                      </h3>
+                      <div className="flex items-center text-gray-600 mb-4 mt-auto">
+                        <FaRegCalendarCheck className="w-5 h-5 text-[var(--primary-700)] mr-2 flex-shrink-0" />
+                        <span>{apiUtils.formatDate(education.date)}</span>
+                      </div>
+                      <button className="w-full bg-[var(--primary)] text-white py-2 px-4 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold mt-auto">
+                        Detaylı Bilgi
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Upcoming Educations */}
-        <div className="mb-20">
+        {/* <div className="mb-20">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Yaklaşan Eğitimler
           </h2>
@@ -132,9 +216,9 @@ export default function Education() {
                 key={index}
                 className="bg-white rounded-2xl shadow-xl overflow-hidden"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-3">
-                  {/* Left - Main Info */}
-                  <div className="lg:col-span-2 p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3"> */}
+        {/* Left - Main Info */}
+        {/* <div className="lg:col-span-2 p-8">
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
@@ -214,10 +298,10 @@ export default function Education() {
                         </ul>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  {/* Right - Details & Registration */}
-                  <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 p-8">
+        {/* Right - Details & Registration */}
+        {/* <div className="bg-gradient-to-br from-[var(--primary-50)] to-teal-50 p-8">
                     <div className="space-y-4 mb-6">
                       <div className="flex items-center text-gray-700">
                         <svg
@@ -308,7 +392,7 @@ export default function Education() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Past Educations */}
         <div className="mb-20">
