@@ -47,12 +47,12 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                <div className="text-3xl font-bold text-teal-600 mb-2">4+</div>
+                <div className="text-3xl font-bold text-teal-600 mb-2">6+</div>
                 <div className="text-gray-600 font-medium">Yıl Deneyim</div>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-lg text-center">
                 <div className="text-3xl font-bold text-teal-600 mb-2">
-                  100+
+                  500+
                 </div>
                 <div className="text-gray-600 font-medium">Başarılı Serans</div>
               </div>

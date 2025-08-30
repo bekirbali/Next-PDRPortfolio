@@ -2,23 +2,23 @@ export default function NeyeIhtiyacinVar() {
   const items = [
     {
       title: "Kabul ve Kararlılık (ACT)",
-      href: "/terapiler",
+      href: "/terapiler/act",
       img: "/assets/psychotherapy.jpg",
     },
     {
       title: "EMDR",
-      href: "/terapiler",
+      href: "/terapiler/emdr",
       img: "/assets/danismanlik.png",
     },
     {
       title: "Oyun Terapisi",
-      href: "/terapiler",
-      img: "/assets/oyunterapi.jpeg",
+      href: "/terapiler/oyun-terapisi",
+      img: "/assets/oyun.jpg",
     },
     {
       title: "Kukla Terapisi",
-      href: "/terapiler",
-      img: "/assets/kuklaterapi1.jpg",
+      href: "/terapiler/kukla-terapisi",
+      img: "/assets/kuklaterapi.jpg",
     },
   ];
 

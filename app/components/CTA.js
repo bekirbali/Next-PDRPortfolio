@@ -38,7 +38,7 @@ export default function CTA() {
             <div className="text-[var(--primary-100)]">Gizlilik Garantisi</div>
           </div>
           <div className="text-white">
-            <div className="text-2xl font-bold mb-2">4+</div>
+            <div className="text-2xl font-bold mb-2">6+</div>
             <div className="text-[var(--primary-100)]">Yıllık Deneyim</div>
           </div>
         </div>
