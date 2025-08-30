@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { educationAPI, apiUtils } from "../lib/api";
 import Image from "next/image";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Education() {
   const [educations, setEducations] = useState([]);
@@ -194,9 +195,12 @@ export default function Education() {
                         <FaRegCalendarCheck className="w-5 h-5 text-[var(--primary-700)] mr-2 flex-shrink-0" />
                         <span>{apiUtils.formatDate(education.date)}</span>
                       </div>
-                      <button className="w-full bg-[var(--primary)] text-white py-2 px-4 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold mt-auto">
-                        Detaylı Bilgi
-                      </button>
+                      <Link
+                        href={`/iletisim`}
+                        className="w-full bg-[var(--primary)] text-white py-2 px-4 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold mt-auto"
+                      >
+                        Kayıt Ol
+                      </Link>
                     </div>
                   </div>
                 ))}
