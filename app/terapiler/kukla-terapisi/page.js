@@ -1,9 +1,10 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "Kukla Terapisi - Çocuklar İçin Yaratıcı İfade Yöntemi - PDR Uzmanı",
+  title:
+    "Kukla Terapisi - Çocuklar İçin Oyun Temelli İfade Yöntemi - PDR Uzmanı",
   description:
-    "Kukla terapisi ile çocukların duygularını güvenli bir şekilde ifade etmelerini sağlayın ve yaratıcılık yoluyla iyileşmelerini destekleyin.",
+    "Kukla terapisi ile çocukların duygularını güvenli bir şekilde ifade etmelerini sağlayın ve oyun temelli yaklaşımla iyileşmelerini destekleyin.",
 };
 
 export default function PuppetTherapy() {
@@ -13,11 +14,11 @@ export default function PuppetTherapy() {
       <div className="bg-gradient-to-r from-green-500 to-teal-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Kukla Terapisi – Çocuklar İçin Yaratıcı İfade Yöntemi
+            Kukla Terapisi – Çocuklar İçin Oyun Temelli İfade Yöntemi
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             Çocukların duygularını ve yaşadıkları zorlukları güvenli bir şekilde
-            ifade etmelerini sağlayan yaratıcı bir yöntem
+            ifade etmelerini sağlayan oyun temelli bir yöntem
           </p>
         </div>
       </div>
@@ -28,7 +29,7 @@ export default function PuppetTherapy() {
           <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-2xl shadow-xl">
             <Image
               src="/assets/kuklaterapidetay.jpg"
-              alt="Kukla Terapisi - Çocuklar İçin Yaratıcı İfade Yöntemi"
+              alt="Kukla Terapisi - Çocuklar İçin Oyun Temelli İfade Yöntemi"
               fill
               className="object-cover"
               priority
@@ -47,7 +48,7 @@ export default function PuppetTherapy() {
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Kukla terapisi, çocukların duygularını ve yaşadıkları zorlukları
-              güvenli bir şekilde ifade etmelerini sağlayan yaratıcı bir
+              güvenli bir şekilde ifade etmelerini sağlayan oyun temelli bir
               yöntemdir. Parmak ya da el kuklalarıyla kurulan oyunlar, çocuğun
               iç dünyasını yansıtır ve hikayenin gücüyle birlikte iyileşme
               sağlanır.
@@ -137,7 +138,7 @@ export default function PuppetTherapy() {
               <li className="flex items-start">
                 <span className="text-green-600 mr-3 mt-1">✓</span>
                 <span className="text-lg text-gray-700">
-                  Yaratıcılığı ve problem çözme becerilerini geliştirir
+                  Problem çözme becerilerini geliştirir
                 </span>
               </li>
               <li className="flex items-start">
@@ -177,7 +178,7 @@ export default function PuppetTherapy() {
               Kukla Terapisi Hakkında Daha Fazla Bilgi Alın
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Çocuğunuzun yaratıcılık yoluyla duygularını ifade etmesini
+              Çocuğunuzun oyun temelli yaklaşımla duygularını ifade etmesini
               sağlayın
             </p>
             <a

@@ -246,7 +246,7 @@ export default function About() {
                 },
                 {
                   name: "Kukla Terapisi",
-                  desc: "Yaratıcı terapi yaklaşımları",
+                  desc: "Çocuklar için terapi",
                   bgColor: "bg-gradient-to-r from-orange-500 to-orange-600",
                 },
               ].map((method, index) => (
