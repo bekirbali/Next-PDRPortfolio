@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="relative bg-white rounded-2xl shadow-2xl p-4 lg:p-6">
               <div className="aspect-[16/10] overflow-hidden rounded-xl">
                 <Image
-                  src="/assets/heroImage.jpg"
+                  src="/assets/heroimg1.jpg"
                   alt="Danışmanlık görüşmesi görseli"
                   width={800}
                   height={500}
