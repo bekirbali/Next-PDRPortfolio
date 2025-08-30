@@ -29,7 +29,7 @@ export default function EMDRTherapy() {
           <div className="relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] overflow-hidden rounded-2xl shadow-xl">
             <Image
               src="/assets/emdrdetay.jpg"
-              alt="EMDR Terapisi - Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşleme"
+              alt="EMDR Terapisi"
               fill
               className="object-cover"
               priority
@@ -43,9 +43,6 @@ export default function EMDRTherapy() {
         <div className="max-w-4xl mx-auto">
           {/* Kısa Açıklama */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Kısa Açıklama
-            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               EMDR, travma ve stres kaynaklı psikolojik sıkıntıların çözümünde
               etkili bir terapi yöntemidir. Beynin doğal öğrenme mekanizmasını

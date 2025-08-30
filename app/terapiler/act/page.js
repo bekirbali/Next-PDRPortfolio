@@ -12,9 +12,7 @@ export default function ACTTherapy() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-teal-600 to-cyan-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            ACT – Kabul ve Kararlılık Terapisi
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">ACT</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             Acıyı azaltmayı ve yaşamda daha anlamlı hedeflere ulaşmayı amaçlayan
             etkileşimli bir terapi yöntemi
@@ -42,9 +40,6 @@ export default function ACTTherapy() {
         <div className="max-w-4xl mx-auto">
           {/* Kısa Açıklama */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Kısa Açıklama
-            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               ACT (Acceptance and Commitment Therapy – Kabul ve Kararlılık
               Terapisi), acıyı azaltmayı ve yaşamda daha anlamlı hedeflere

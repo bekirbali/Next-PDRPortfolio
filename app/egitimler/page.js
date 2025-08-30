@@ -444,7 +444,7 @@ export default function Education() {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Profesyonel Gelişiminize Devam Edin
           </h2>
@@ -461,7 +461,7 @@ export default function Education() {
               Abone Ol
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
