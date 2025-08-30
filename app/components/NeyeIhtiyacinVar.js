@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function NeyeIhtiyacinVar() {
   const items = [
     {
@@ -39,11 +41,12 @@ export default function NeyeIhtiyacinVar() {
               className="group flex flex-col items-center text-center"
             >
               <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg ring-2 ring-white/60 group-hover:ring-[var(--primary)] transition-all">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  width={256}
+                  height={256}
                 />
               </div>
               <div className="mt-4 text-lg md:text-xl font-medium text-slate-700">

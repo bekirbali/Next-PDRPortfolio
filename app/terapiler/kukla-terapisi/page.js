@@ -14,7 +14,7 @@ export default function PuppetTherapy() {
       <div className="bg-gradient-to-r from-green-500 to-teal-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Kukla Terapisi – Çocuklar İçin Oyun Temelli İfade Yöntemi
+            Kukla Terapisi
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             Çocukların duygularını ve yaşadıkları zorlukları güvenli bir şekilde
@@ -43,9 +43,6 @@ export default function PuppetTherapy() {
         <div className="max-w-4xl mx-auto">
           {/* Kısa Açıklama */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Kısa Açıklama
-            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Kukla terapisi, çocukların duygularını ve yaşadıkları zorlukları
               güvenli bir şekilde ifade etmelerini sağlayan oyun temelli bir

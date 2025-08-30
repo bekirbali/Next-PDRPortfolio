@@ -192,9 +192,7 @@ export const mockBlogPosts = [
     title: "Ergenlik Dönemi: Ailelere Öneriler",
     slug: "ergenlik-donemi-ailelere-oneriler",
     excerpt:
-      "Ergenlik dönemindeki çocuklarla iletişim kurma ve onları anlama rehberi.",
-    content:
-      "<h2>Ergenlik Dönemi: Ailelere Öneriler</h2><p>Ergenlik dönemi hem çocuklar hem de aileler için zorlu bir süreçtir. Fiziksel, duygusal ve sosyal değişimlerin yoğun olduğu bu dönemde, ailelerin doğru yaklaşımı çocukların sağlıklı gelişimi için kritik öneme sahiptir. Bu rehber, ergenlik dönemindeki çocuklarla iletişim kurma ve onları anlama konusunda ailelere pratik öneriler sunar.</p><h3>1. Ergenlik Dönemi Özellikleri</h3><p>Ergenlik döneminde yaşanan değişimleri anlamak, doğru yaklaşım geliştirmenin ilk adımıdır:</p><h4>Fiziksel Değişimler:</h4><ul><li>Hızlı büyüme ve gelişme</li><li>Cinsel gelişim ve hormonal değişiklikler</li><li>Beden imajı ile ilgili endişeler</li><li>Uyku düzeninde değişiklikler</li><li>Enerji seviyesinde dalgalanmalar</li></ul><h4>Psikolojik Değişimler:</h4><ul><li>Kimlik arayışı ve bireyselleşme</li><li>Duygusal dalgalanmalar</li><li>Risk alma davranışları</li><li>Akran grubuna yönelme</li><li>Aile otoritesine karşı çıkma</li></ul><h3>2. Aile İletişimi</h3><p>Ergenle sağlıklı iletişim kurma yöntemleri:</p><h4>Aktif Dinleme:</h4><ul><li>Çocuğunuzu bölmeden dinleyin</li><li>Duygularını kabul edin ve yargılamayın</li><li>Anladığınızı göstermek için geri bildirim verin</li><li>Göz teması kurun ve dikkatinizi verin</li><li>Telefon veya televizyon olmadan konuşun</li></ul><h4>Empatik Yaklaşım:</h4><ul><li>Kendinizi çocuğunuzun yerine koyun</li><li>Ergenlik dönemindeki zorlukları hatırlayın</li><li>Duyguları geçersiz kılmayın</li><li>Destekleyici tepkiler verin</li><li>Benzer deneyimlerinizi paylaşın</li></ul><h3>3. Sınır Koyma</h3><p>Esnek ama tutarlı kurallar belirleme:</p><h4>Net Kurallar:</h4><ul><li>Önemli kuralları net şekilde belirtin</li><li>Kuralların nedenini açıklayın</li><li>Sonuçları önceden belirleyin</li><li>Tutarlı olun</li><li>Gerektiğinde esnek olun</li></ul><h4>Müzakere:</h4><ul><li>Çocuğunuzla kuralları tartışın</li><li>Mantıklı önerileri değerlendirin</li><li>Ortak kararlar almaya çalışın</li><li>Çocuğunuzun görüşüne değer verin</li><li>Küçük ödünler verin</li></ul><h3>4. Duygusal Destek</h3><p>Ergenin duygusal ihtiyaçlarını karşılama:</p><h4>Güvenli Ortam:</h4><ul><li>Çocuğunuzun duygularını ifade etmesine izin verin</li><li>Yargılamadan dinleyin</li><li>Duygusal iniş çıkışları normal karşılayın</li><li>Stres yönetimi teknikleri öğretin</li><li>Gerekirse profesyonel destek alın</li></ul><h4>Olumlu Takdir:</h4><ul><li>Küçük başarıları kutlayın</li><li>Güçlü yanlarını vurgulayın</li><li>Çaba gösterdiği konularda destekleyin</li><li>Kendine güvenini artırın</li><li>Hataları öğrenme fırsatı olarak görün</li></ul><h3>5. Bağımsızlık Desteği</h3><p>Ergenin bireyselleşme sürecini destekleme:</p><ul><li>Kendi kararlarını vermesine izin verin</li><li>Hata yapmasına müsaade edin</li><li>Özel alanına saygı gösterin</li><li>Güven duyduğunuzu gösterin</li><li>Gerektiğinde rehberlik edin</li></ul><h3>6. Akran İlişkileri</h3><p>Arkadaşlık ve sosyal gelişimi destekleme:</p><ul><li>Arkadaşlarını tanımaya çalışın</li><li>Evde arkadaş buluşmalarına izin verin</li><li>Sosyal medya kullanımını denetleyin</li><li>Grup aktivitelerine katılımını destekleyin</li><li>Zorbalık konusunda bilgilendirin</li></ul><h3>7. Akademik Destek</h3><p>Okul başarısını destekleme:</p><ul><li>Ödev ve sınav konularında destek olun</li><li>Gerçekçi beklentiler belirleyin</li><li>Çalışma alışkanlıkları geliştirmesine yardım edin</li><li>Öğretmenlerle iletişim kurun</li><li>Başarısızlıkları öğrenme fırsatı olarak görün</li></ul><h3>8. Sağlık ve Güvenlik</h3><p>Fiziksel ve mental sağlığı koruma:</p><ul><li>Düzenli sağlık kontrollerini yapın</li><li>Beslenme ve uyku düzenini takip edin</li><li>Egzersiz yapmasını teşvik edin</li><li>Madde kullanımı konusunda bilgilendirin</li><li>Güvenlik kurallarını hatırlatın</li></ul><h3>9. Teknoloji Kullanımı</h3><p>Dijital dünyada rehberlik:</p><ul><li>Ekran süresini sınırlayın</li><li>İnternet güvenliği hakkında bilgilendirin</li><li>Sosyal medya kullanımını denetleyin</li><li>Teknoloji bağımlılığı belirtilerini takip edin</li><li>Alternatif aktiviteler önerin</li></ul><h3>10. Profesyonel Destek</h3><p>Ne zaman yardım alınması gerektiği:</p><ul><li>Uzun süreli duygusal sorunlar</li><li>Akademik performansta ciddi düşüş</li><li>Riskli davranışlar</li><li>İlişki problemleri</li><li>Madde kullanımı</li></ul><h3>Sonuç</h3><p>Ergenlik dönemi, hem çocuklar hem de aileler için büyüme ve öğrenme sürecidir. Bu dönemde sabır, anlayış ve tutarlılık göstermek önemlidir. Çocuğunuzun bireyselleşme sürecini desteklerken, güvenli bir liman olmaya devam edin. Unutmayın, her ergen farklıdır ve kendi hızında gelişir. Bu yolculukta çocuğunuzla birlikte büyüyecek ve öğreneceksiniz.</p>",
+      "Ergenlik dönemi hem çocuklar hem de aileler için zorlu bir süreçtir. Fiziksel, duygusal ve sosyal değişimlerin yoğun olduğu bu dönemde, ailelerin doğru yaklaşımı çocukların sağlıklı gelişimi için kritik öneme sahiptir. Bu rehber, ergenlik dönemindeki çocuklarla iletişim kurma ve onları anlama konusunda ailelere pratik öneriler sunar.</p><h3>1. Ergenlik Dönemi Özellikleri</h3><p>Ergenlik döneminde yaşanan değişimleri anlamak, doğru yaklaşım geliştirmenin ilk adımıdır:</p><h4>Fiziksel Değişimler:</h4><ul><li>Hızlı büyüme ve gelişme</li><li>Cinsel gelişim ve hormonal değişiklikler</li><li>Beden imajı ile ilgili endişeler</li><li>Uyku düzeninde değişiklikler</li><li>Enerji seviyesinde dalgalanmalar</li></ul><h4>Psikolojik Değişimler:</h4><ul><li>Kimlik arayışı ve bireyselleşme</li><li>Duygusal dalgalanmalar</li><li>Risk alma davranışları</li><li>Akran grubuna yönelme</li><li>Aile otoritesine karşı çıkma</li></ul><h3>2. Aile İletişimi</h3><p>Ergenle sağlıklı iletişim kurma yöntemleri:</p><h4>Aktif Dinleme:</h4><ul><li>Çocuğunuzu bölmeden dinleyin</li><li>Duygularını kabul edin ve yargılamayın</li><li>Anladığınızı göstermek için geri bildirim verin</li><li>Göz teması kurun ve dikkatinizi verin</li><li>Telefon veya televizyon olmadan konuşun</li></ul><h4>Empatik Yaklaşım:</h4><ul><li>Kendinizi çocuğunuzun yerine koyun</li><li>Ergenlik dönemindeki zorlukları hatırlayın</li><li>Duyguları geçersiz kılmayın</li><li>Destekleyici tepkiler verin</li><li>Benzer deneyimlerinizi paylaşın</li></ul><h3>3. Sınır Koyma</h3><p>Esnek ama tutarlı kurallar belirleme:</p><h4>Net Kurallar:</h4><ul><li>Önemli kuralları net şekilde belirtin</li><li>Kuralların nedenini açıklayın</li><li>Sonuçları önceden belirleyin</li><li>Tutarlı olun</li><li>Gerektiğinde esnek olun</li></ul><h4>Müzakere:</h4><ul><li>Çocuğunuzla kuralları tartışın</li><li>Mantıklı önerileri değerlendirin</li><li>Ortak kararlar almaya çalışın</li><li>Çocuğunuzun görüşüne değer verin</li><li>Küçük ödünler verin</li></ul><h3>4. Duygusal Destek</h3><p>Ergenin duygusal ihtiyaçlarını karşılama:</p><h4>Güvenli Ortam:</h4><ul><li>Çocuğunuzun duygularını ifade etmesine izin verin</li><li>Yargılamadan dinleyin</li><li>Duygusal iniş çıkışları normal karşılayın</li><li>Stres yönetimi teknikleri öğretin</li><li>Gerekirse profesyonel destek alın</li></ul><h4>Olumlu Takdir:</h4><ul><li>Küçük başarıları kutlayın</li><li>Güçlü yanlarını vurgulayın</li><li>Çaba gösterdiği konularda destekleyin</li><li>Kendine güvenini artırın</li><li>Hataları öğrenme fırsatı olarak görün</li></ul><h3>5. Bağımsızlık Desteği</h3><p>Ergenin bireyselleşme sürecini destekleme:</p><ul><li>Kendi kararlarını vermesine izin verin</li><li>Hata yapmasına müsaade edin</li><li>Özel alanına saygı gösterin</li><li>Güven duyduğunuzu gösterin</li><li>Gerektiğinde rehberlik edin</li></ul><h3>6. Akran İlişkileri</h3><p>Arkadaşlık ve sosyal gelişimi destekleme:</p><ul><li>Arkadaşlarını tanımaya çalışın</li><li>Evde arkadaş buluşmalarına izin verin</li><li>Sosyal medya kullanımını denetleyin</li><li>Grup aktivitelerine katılımını destekleyin</li><li>Zorbalık konusunda bilgilendirin</li></ul><h3>7. Akademik Destek</h3><p>Okul başarısını destekleme:</p><ul><li>Ödev ve sınav konularında destek olun</li><li>Gerçekçi beklentiler belirleyin</li><li>Çalışma alışkanlıkları geliştirmesine yardım edin</li><li>Öğretmenlerle iletişim kurun</li><li>Başarısızlıkları öğrenme fırsatı olarak görün</li></ul><h3>8. Sağlık ve Güvenlik</h3><p>Fiziksel ve mental sağlığı koruma:</p><ul><li>Düzenli sağlık kontrollerini yapın</li><li>Beslenme ve uyku düzenini takip edin</li><li>Egzersiz yapmasını teşvik edin</li><li>Madde kullanımı konusunda bilgilendirin</li><li>Güvenlik kurallarını hatırlatın</li></ul><h3>9. Teknoloji Kullanımı</h3><p>Dijital dünyada rehberlik:</p><ul><li>Ekran süresini sınırlayın</li><li>İnternet güvenliği hakkında bilgilendirin</li><li>Sosyal medya kullanımını denetleyin</li><li>Teknoloji bağımlılığı belirtilerini takip edin</li><li>Alternatif aktiviteler önerin</li></ul><h3>10. Profesyonel Destek</h3><p>Ne zaman yardım alınması gerektiği:</p><ul><li>Uzun süreli duygusal sorunlar</li><li>Akademik performansta ciddi düşüş</li><li>Riskli davranışlar</li><li>İlişki problemleri</li><li>Madde kullanımı</li></ul><h3>Sonuç</h3><p>Ergenlik dönemi, hem çocuklar hem de aileler için büyüme ve öğrenme sürecidir. Bu dönemde sabır, anlayış ve tutarlılık göstermek önemlidir. Çocuğunuzun bireyselleşme sürecini desteklerken, güvenli bir liman olmaya devam edin. Unutmayın, her ergen farklıdır ve kendi hızında gelişir. Bu yolculukta çocuğunuzla birlikte büyüyecek ve öğreneceksiniz.</p>",
     author: {
       id: 1,
       username: "admin",
@@ -269,5 +267,51 @@ export const mockCategories = [
     slug: "aile",
     description: "Aile danışmanlığı ve ebeveynlik",
     created_at: "2024-01-01T10:00:00Z",
+  },
+];
+
+// Mock Education Data
+export const mockEducations = [
+  {
+    id: 1,
+    title: "Kaygı Bozuklukları ve Bilişsel Davranışçı Terapi",
+    image: "/assets/actdetay.jpg",
+    date: "2024-03-15",
+    created_at: "2024-03-01T10:00:00Z",
+  },
+  {
+    id: 2,
+    title: "Çift ve Aile Terapisi Temel Eğitimi",
+    image: "/assets/emdr.jpg",
+    date: "2024-03-22",
+    created_at: "2024-03-01T10:00:00Z",
+  },
+  {
+    id: 3,
+    title: "Travma Odaklı Terapi Yaklaşımları",
+    image: "/assets/emdrdetay.jpg",
+    date: "2024-04-05",
+    created_at: "2024-03-01T10:00:00Z",
+  },
+  {
+    id: 4,
+    title: "EMDR Temel Eğitimi - Level 1",
+    image: "/assets/emdrdetay1.jpg",
+    date: "2024-04-12",
+    created_at: "2024-03-01T10:00:00Z",
+  },
+  {
+    id: 5,
+    title: "Çocuk ve Ergen Psikolojisi Atölyesi",
+    image: "/assets/oyun.jpg",
+    date: "2024-04-20",
+    created_at: "2024-03-01T10:00:00Z",
+  },
+  {
+    id: 6,
+    title: "Mindfulness Temelli Stres Azaltma Programı",
+    image: "/assets/kuklaterapi.jpg",
+    date: "2024-05-03",
+    created_at: "2024-03-01T10:00:00Z",
   },
 ];

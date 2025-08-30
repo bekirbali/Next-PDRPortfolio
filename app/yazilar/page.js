@@ -423,7 +423,7 @@ export default function Blog() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8 lg:p-12 text-center">
+        {/* <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Yeni Yazılardan Haberdar Olun
           </h2>
@@ -445,7 +445,7 @@ export default function Blog() {
             Haftalık bülten • Spam göndermiyoruz • İstediğiniz zaman
             çıkabilirsiniz
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
