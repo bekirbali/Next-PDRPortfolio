@@ -54,9 +54,9 @@ export default function About() {
 
           <div className="lg:col-span-2">
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              {/* <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Merhaba! Ben Merve BİLGİ KISA
-              </h3>
+              </h3> */}
               <p className="text-gray-600 mb-6">
                 Lise eğitimimi Hollanda&apos;da tamamladıktan sonra Necmettin
                 Erbakan Üniversitesi Psikolojik Danışmanlık ve Rehberlik
@@ -275,7 +275,7 @@ export default function About() {
                 "Ergen Psikolojisi",
                 "Aile Terapisi",
                 "Ebeveynlik Becerileri",
-                "Akademik Destek",
+                "Yeme Bozuklukları",
                 "Sınav Kaygısı",
                 "Ayrılık Kaygısı",
                 "Teknoloji Bağımlılığı",

@@ -11,7 +11,7 @@ export default function About() {
             <div className="rounded-2xl">
               <div className="relative aspect-square rounded-xl overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/assets/uzman.jpg"
+                  src="/assets/uzmanlik.jpg"
                   alt="Uzman"
                   fill
                   className="object-cover"

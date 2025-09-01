@@ -23,13 +23,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-1">
+          <div className="flex-shrink-0 flex flex-col justify-center sm:flex-row md:flex-col lg:flex-row items-center gap-1">
             <Link
               href="/"
-              className="flex flex-col items-center gap-1 border-r border-gray-600"
+              className="flex flex-col items-center gap-1 border-b sm:border-b-0 sm:border-r md:border-b md:border-r-0 lg:border-b-0 lg:border-r border-gray-600"
             >
               <Image
-                src="/assets/kanatlilogoson.png"
+                src="/assets/maviinflatelogo.png"
                 alt="Merve KISA Logo"
                 width={100}
                 height={40}
@@ -40,7 +40,7 @@ export default function Header() {
                 Merve KISA
               </span>
             </Link>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col items-center sm:items-start md:items-center lg:items-start gap-1">
               <p className="text-[#34495e] font-medium">Psikoterapist</p>
               <p className="text-[#34495e] font-medium">Psikolojik Danışman</p>
             </div>
@@ -64,7 +64,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <Link
               href="/iletisim"
               className="bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--primary-700)] transition-colors duration-200 font-medium"
