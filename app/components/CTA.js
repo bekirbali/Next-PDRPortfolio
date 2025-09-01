@@ -28,11 +28,7 @@ export default function CTA() {
           </Link>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="text-white">
-            <div className="text-2xl font-bold mb-2">7/24</div>
-            <div className="text-[var(--primary-100)]">Acil Durum Desteği</div>
-          </div>
+        <div className="mt-12 flex  justify-center gap-6 text-center">
           <div className="text-white">
             <div className="text-2xl font-bold mb-2">%100</div>
             <div className="text-[var(--primary-100)]">Gizlilik Garantisi</div>

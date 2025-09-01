@@ -30,8 +30,8 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-600 mb-4 max-w-md">
-              Profesyonel psikolojik destek ve terapi hizmetleri. Bireysel, çift
-              ve aile terapileri ile yaşam kalitenizi artırın.
+              Profesyonel psikolojik destek ve terapi hizmetleri. Bireysel,
+              online ve aile terapileriyle yaşam kalitenizi artırın.
             </p>
             <div className="flex space-x-4">
               <a

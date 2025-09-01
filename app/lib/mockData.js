@@ -282,7 +282,7 @@ export const mockEducations = [
   {
     id: 2,
     title: "Çift ve Aile Terapisi Temel Eğitimi",
-    image: "/assets/emdr.jpg",
+    image: "/assets/emdrdetay.jpg",
     date: "2024-03-22",
     created_at: "2024-03-01T10:00:00Z",
   },
