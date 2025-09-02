@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,26 +13,78 @@ export default function Contact() {
     message: "",
     appointmentType: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      // Sadece rakamlara ve boş string'e izin ver
+      const regex = /^[0-9]*$/;
+      if (regex.test(value)) {
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic here
-    console.log("Form submitted:", formData);
-    alert(
-      "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım."
-    );
+    setIsSubmitting(true);
+
+    const dataToSend = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      topic: formData.subject, // Frontend 'subject' -> Backend 'topic'
+      message: `${formData.message}\n\nRandevu Türü: ${
+        formData.appointmentType || "Belirtilmemiş"
+      }`,
+    };
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(result.message);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          appointmentType: "",
+        });
+      } else {
+        toast.error(result.error || "Bir hata oluştu.");
+      }
+    } catch (error) {
+      toast.error(
+        "Mesaj gönderilirken bir sunucu hatası oluştu. Lütfen tekrar deneyin."
+      );
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const appointmentTypes = [
     "Bireysel Terapi",
-    "Çift Terapisi",
     "Aile Terapisi",
     "Grup Terapisi",
     "Eğitim/Seminer",
@@ -201,9 +254,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[var(--primary)] text-white py-3 px-6 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold"
+                  disabled={isSubmitting}
+                  className="w-full bg-[var(--primary)] text-white py-3 px-6 rounded-lg hover:bg-[var(--primary-700)] transition-colors duration-200 font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
-                  Mesaj Gönder
+                  {isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"}
                 </button>
               </form>
             </div>
@@ -310,16 +364,6 @@ export default function Contact() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Adres</h3>
-                    <p className="text-gray-600">
-                      Merkez Mahallesi
-                      <br />
-                      Örnek Sokak No: 123
-                      <br />
-                      Çankaya, Ankara
-                    </p>
                   </div>
                 </div>
               </div>
@@ -434,15 +478,6 @@ export default function Contact() {
               <p className="text-gray-600">
                 Randevunuzu en az 24 saat öncesinden iptal etmeniz durumunda
                 herhangi bir ücret talep edilmez.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Acil durumda nasıl ulaşabilirim?
-              </h3>
-              <p className="text-gray-600">
-                Acil durumlarda 7/24 ulaşabileceğiniz telefon numarası ve kriz
-                müdahale protokollerimiz mevcuttur.
               </p>
             </div>
           </div>
