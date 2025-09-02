@@ -154,7 +154,7 @@ export default function Blog() {
               </h1>
             </div>
             {/* Data Source Toggle */}
-            <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+            {/* <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => {
                   apiUtils.enableMockData();
@@ -181,16 +181,11 @@ export default function Blog() {
               >
                 API
               </button>
-            </div>
+            </div> */}
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Mental sağlık, kişisel gelişim ve yaşam kalitesi konularında faydalı
             bilgiler ve pratik öneriler.
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Şu anda{" "}
-            {apiUtils.isUsingMockData() ? "mock veriler" : "backend API"}{" "}
-            kullanılıyor
           </p>
         </div>
 
@@ -318,7 +313,7 @@ export default function Blog() {
               </div>
               <p className="text-gray-400 mt-2">
                 {posts.length === 0
-                  ? "Backend'den veri yüklenmeye çalışılıyor..."
+                  ? "Veri yüklenmeye çalışılıyor..."
                   : "Farklı anahtar kelimeler veya kategoriler deneyebilirsiniz."}
               </p>
             </div>
@@ -326,7 +321,7 @@ export default function Blog() {
             filteredPosts.map((post, index) => (
               <article
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
               >
                 {post.featured_image ? (
                   <div className="h-48 relative overflow-hidden">
@@ -367,18 +362,20 @@ export default function Blog() {
                     </div>
                   </div>
                 )}
-                <div className="p-6">
-                  <Link href={`/yazilar/${post.slug}`}>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
-                      {post.title}
-                    </h3>
-                  </Link>
-                  <div
-                    className="text-gray-600 mb-4 rich-text-content line-clamp-4"
-                    dangerouslySetInnerHTML={apiUtils.prepareRichTextContent(
-                      post.excerpt
-                    )}
-                  />
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex-grow">
+                    <Link href={`/yazilar/${post.slug}`}>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-[var(--primary)] transition-colors duration-200 cursor-pointer">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <div
+                      className="text-gray-600 mb-4 rich-text-content line-clamp-4"
+                      dangerouslySetInnerHTML={apiUtils.prepareRichTextContent(
+                        post.excerpt
+                      )}
+                    />
+                  </div>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <span>
                       {apiUtils.formatDate(

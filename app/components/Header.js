@@ -29,7 +29,7 @@ export default function Header() {
               className="flex flex-col items-center gap-1 border-b sm:border-b-0 sm:border-r md:border-b md:border-r-0 lg:border-b-0 lg:border-r border-gray-600"
             >
               <Image
-                src="/assets/mkuslulogoturuncu.png"
+                src="/assets/mkuslulogomavi.png"
                 alt="Merve KISA Logo"
                 width={100}
                 height={40}

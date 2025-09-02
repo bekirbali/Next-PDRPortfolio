@@ -4,7 +4,8 @@ export const API_CONFIG = {
   USE_MOCK_DATA: false, // true: mock data kullan, false: backend'den veri çek
 
   // Backend API URL'leri
-  BASE_URL: "http://localhost:8000/api",
+  // BASE_URL: "http://localhost:8000/api",
+  BASE_URL: "https://mervebilgikisa.pythonanywhere.com/api",
   ENDPOINTS: {
     BLOG_POSTS: "/blog/posts/",
     CATEGORIES: "/blog/categories/",
