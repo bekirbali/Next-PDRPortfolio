@@ -270,14 +270,14 @@ export default function About() {
               {[
                 "Travma Sonrası Stres Bozukluğu",
                 "Savaş Travması",
-                "Göç ve Uyum Sorunları",
-                "Çocuk Psikolojisi",
-                "Ergen Psikolojisi",
+                "Çocuk ve Ergen Psikolojisi",
+                "Panik Bozukluk",
                 "Aile Terapisi",
                 "Ebeveynlik Becerileri",
                 "Yeme Bozuklukları",
                 "Sınav Kaygısı",
                 "Ayrılık Kaygısı",
+                "Depresip Bozukluk",
                 "Teknoloji Bağımlılığı",
                 "Akran Zorbalığı",
               ].map((specialty, index) => (
@@ -377,11 +377,10 @@ export default function About() {
         {/* Personal Quote */}
         <div className="bg-gradient-to-r from-[var(--primary)] to-teal-600 rounded-2xl p-8 mb-16 text-center text-white">
           <blockquote className="text-xl italic mb-4">
-            &quot;Farklı kültürlerden danışanlarla çalışmak, terapi sürecine
-            daha geniş bir bakış açısı katmamı sağlıyor. Bu sayede danışanlar,
-            kendi dillerinde ifade edebilme rahatlığını yaşayabiliyorlar.&quot;
+            &quot;Hayatın görkemli manzarasını yanlızca yaşantısının
+            sorumluluğunu almayı seçenler seyredebilirler.&quot;
           </blockquote>
-          <p className="text-white/90">- Merve BİLGİ KISA</p>
+          <p className="text-white/90">Merve BİLGİ KISA</p>
         </div>
 
         {/* CTA */}

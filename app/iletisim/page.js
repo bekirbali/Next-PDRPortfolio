@@ -370,7 +370,7 @@ export default function Contact() {
             </div>
 
             {/* Map */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            {/* <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                 <div className="text-center text-gray-600">
                   <svg
@@ -398,7 +398,7 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
