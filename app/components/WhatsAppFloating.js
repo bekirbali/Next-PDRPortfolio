@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function WhatsAppFloating({
-  phone = "+905074760309",
+  phone = "+905015360604",
   message = "Merhaba, bilgi almak istiyorum.",
 }) {
   const href = `https://wa.me/${phone.replace(

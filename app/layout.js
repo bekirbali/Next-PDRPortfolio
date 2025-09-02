@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppFloating from "./components/WhatsAppFloating";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // API örneklerini development ortamında kullanabilmek için import ediyoruz
 import "./lib/examples";
 
@@ -33,8 +35,9 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <ToastContainer />
         <WhatsAppFloating
-          phone="+905074760309"
+          phone="+905015360604"
           message="Merhaba, web sitenizden yazıyorum."
         />
       </body>
