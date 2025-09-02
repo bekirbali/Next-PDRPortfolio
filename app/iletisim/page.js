@@ -314,7 +314,7 @@ export default function Contact() {
                     </h3>
                     <p className="text-gray-600">+90 (501) 536 06 04</p>
                     <p className="text-sm text-gray-500">
-                      Pazartesi - Cuma: 09:00 - 20:00
+                      Pazartesi - Cuma: 10:00 - 20:00
                     </p>
                   </div>
                 </div>
@@ -382,11 +382,11 @@ export default function Contact() {
                   <span className="font-medium text-gray-900">
                     Pazartesi - Cuma
                   </span>
-                  <span className="text-gray-600">09:00 - 18:00</span>
+                  <span className="text-gray-600">10:00 - 20:00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="font-medium text-gray-900">Cumartesi</span>
-                  <span className="text-gray-600">09:00 - 15:00</span>
+                  <span className="text-gray-600">10:00 - 20:00</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
                   <span className="font-medium text-gray-900">Pazar</span>
