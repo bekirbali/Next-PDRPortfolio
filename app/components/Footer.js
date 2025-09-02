@@ -93,19 +93,12 @@ export default function Footer() {
               <li className="text-gray-600">
                 <span className="font-medium">Telefon:</span>
                 <br />
-                +90 (507) 476 03 09
+                +90 (501) 536 06 04
               </li>
               <li className="text-gray-600">
                 <span className="font-medium">E-posta:</span>
                 <br />
                 info@pdruzmani.com
-              </li>
-              <li className="text-gray-600">
-                <span className="font-medium">Adres:</span>
-                <br />
-                Merkez Mah. Örnek Sok. No:123
-                <br />
-                Çankaya, Ankara
               </li>
             </ul>
           </div>

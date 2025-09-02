@@ -21,10 +21,10 @@ export default function CTA() {
             Ücretsiz İlk Görüşme
           </Link>
           <Link
-            href="tel:+905074760309"
+            href="tel:+905015360604"
             className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-[var(--primary-700)] transition-colors duration-200 font-semibold text-lg"
           >
-            Hemen Ara: 0 (507) 476 03 09
+            Hemen Ara: 0 (501) 536 06 04
           </Link>
         </div>
 

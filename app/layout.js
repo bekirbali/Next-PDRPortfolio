@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <ToastContainer />
         <WhatsAppFloating
-          phone="+905074760309"
+          phone="+905015360604"
           message="Merhaba, web sitenizden yazıyorum."
         />
       </body>

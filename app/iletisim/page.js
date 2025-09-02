@@ -309,7 +309,7 @@ export default function Contact() {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       Telefon
                     </h3>
-                    <p className="text-gray-600">+90 (507) 476 03 09</p>
+                    <p className="text-gray-600">+90 (501) 536 06 04</p>
                     <p className="text-sm text-gray-500">
                       Pazartesi - Cuma: 09:00 - 20:00
                     </p>
@@ -336,7 +336,7 @@ export default function Contact() {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       E-posta
                     </h3>
-                    <p className="text-gray-600">info@pdruzmani.com</p>
+                    <p className="text-gray-600">mervebilgikisa@gmail.com</p>
                     <p className="text-sm text-gray-500">
                       24 saat içinde yanıtlanır
                     </p>
