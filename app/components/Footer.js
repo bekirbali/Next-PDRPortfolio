@@ -35,7 +35,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/mervebilgikisa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative transition-all duration-300 transform hover:scale-110"
@@ -98,7 +98,7 @@ export default function Footer() {
               <li className="text-gray-600">
                 <span className="font-medium">E-posta:</span>
                 <br />
-                info@pdruzmani.com
+                mervebilgikisa@gmail.com
               </li>
             </ul>
           </div>

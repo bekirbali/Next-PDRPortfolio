@@ -50,13 +50,16 @@ export default function Contact() {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/contact/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      });
+      const response = await fetch(
+        "https://mervebilgikisa.pythonanywhere.com/api/contact/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
 
       const result = await response.json();
 
@@ -280,12 +283,12 @@ export default function Contact() {
                       Instagram
                     </h3>
                     <a
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/mervebilgikisa/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 hover:text-[var(--primary-700)] underline"
                     >
-                      instagram.com
+                      Merve Bilgi Kısa
                     </a>
                   </div>
                 </div>
