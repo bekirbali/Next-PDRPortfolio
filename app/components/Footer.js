@@ -12,7 +12,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="flex flex-col items-center gap-1 border-r border-gray-600 pr-3">
                 <Image
-                  src="/assets/maviinflatelogo.png"
+                  src="/assets/mkuslulogomavi.png"
                   alt="Merve KISA Logo"
                   width={100}
                   height={40}
